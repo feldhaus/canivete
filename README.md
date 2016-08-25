@@ -21,6 +21,7 @@ for i=1, #houses do print( houses[i] ) end
 ```
 
 ### orderAsc
+Sorts the table in ascending order.
 ```lua
 local starks = { 'Ned', 'Catelyn', 'Jon Snow', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon' }
 canivete.orderAsc( starks )
@@ -37,6 +38,7 @@ for i=1, #starks do print( starks[i] ) end
 ```
 
 ### orderDesc
+Sort the table in a descending order.
 ```lua
 local lannisters = { 
     { name='Tywin', score=430 },
@@ -55,6 +57,7 @@ for i=1, #lannisters do print( lannisters[i].name, lannisters[i].score ) end
 ```
 
 ### hex2rgb
+Converts a hexadecimal string color to rgb (0-1).
 ```lua
 print( canivete.hex2rgb( "#ff0000" ) )
 -- 1, 0, 0 (red)
