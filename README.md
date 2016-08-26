@@ -56,37 +56,47 @@ for i=1, #lannisters do print( lannisters[i].name, lannisters[i].score ) end
 --  Joanna  260
 ```
 
-### sum( table )
+### sum(table)
 Returns the total sum of a table.
 ```lua
 local numbers = { 0, 1, 2, 3, 4, 5  }
 local sum = canivete.sum( numbers )
 print( 'sum', sum )
+-- output:
+--  sum 15
 ```
 
-### avg( table )
+### avg(table)
 Returns the average value of a table.
 ```lua
 local numbers = { 0, 1, 2, 3, 4, 5  }
 local avg = canivete.avg( numbers )
 print( 'avg', avg )
+-- output:
+--  avg 7.5
 ```
 
-### clamp( value, min, max )
+### clamp(value, min, max)
 Clamps a value between a minimum number and maximum number value
 ```lua
 local clamp = canivete.clamp( -20, -5, 10 )
-print( 'clamp', clamp ) -- -5
+print( 'clamp', clamp )
+-- output:
+--  clamp   -5
 
 local clamp = canivete.clamp( 10, 0, 8 )
-print( 'clamp', clamp ) -- 8
+print( 'clamp', clamp )
+-- output:
+--  clamp   8
 ```
 
-### lerp( start, end, interpolation )
+### lerp(start, end, interpolation)
 Returns the interpolated number result between the two number values
 ```lua
 local lerp = canivete.lerp( 5, 10, 0.5 )
-print( 'lerp', lerp ) -- 7.5
+print( 'lerp', lerp )
+-- output:
+-- lerp 7.5
 ```
 
 ### hex2rgb(string)
