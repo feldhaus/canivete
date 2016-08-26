@@ -1,4 +1,5 @@
 # Canivete
+A suitable toolkit for Lua development.
 
 ## Usage
 Download file and load library.
