@@ -8,7 +8,7 @@ local canivete = require "canivete"
 
 ## Reference
 
-### shuffle
+### shuffle(table)
 Randomizes the order of the elements in the table.
 ```lua
 local numbers = { 0, 1, 2, 3, 4, 5  }
@@ -20,7 +20,7 @@ canivete.shuffle( houses )
 for i=1, #houses do print( houses[i] ) end
 ```
 
-### orderAsc
+### orderAsc(table,[key])
 Sorts the table in ascending order.
 ```lua
 local starks = { 'Ned', 'Catelyn', 'Jon Snow', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon' }
@@ -37,7 +37,7 @@ for i=1, #starks do print( starks[i] ) end
 --  Sansa
 ```
 
-### orderDesc
+### orderDesc(table,[key])
 Sort the table in a descending order.
 ```lua
 local lannisters = { 
@@ -56,13 +56,46 @@ for i=1, #lannisters do print( lannisters[i].name, lannisters[i].score ) end
 --  Joanna  260
 ```
 
-### hex2rgb
+### sum( table )
+Returns the total sum of a table.
+```lua
+local numbers = { 0, 1, 2, 3, 4, 5  }
+local sum = canivete.sum( numbers )
+print( 'sum', sum )
+```
+
+### avg( table )
+Returns the average value of a table.
+```lua
+local numbers = { 0, 1, 2, 3, 4, 5  }
+local avg = canivete.avg( numbers )
+print( 'avg', avg )
+```
+
+### clamp( value, min, max )
+Clamps a value between a minimum number and maximum number value
+```lua
+local clamp = canivete.clamp( -20, -5, 10 )
+print( 'clamp', clamp ) -- -5
+
+local clamp = canivete.clamp( 10, 0, 8 )
+print( 'clamp', clamp ) -- 8
+```
+
+### lerp( start, end, interpolation )
+Returns the interpolated number result between the two number values
+```lua
+local lerp = canivete.lerp( 5, 10, 0.5 )
+print( 'lerp', lerp ) -- 7.5
+```
+
+### hex2rgb(string)
 Converts a hexadecimal string color to rgb (0-1).
 ```lua
-print( canivete.hex2rgb( "#ff0000" ) )
+print( canivete.hex2rgb( '#ff0000' ) )
 -- 1, 0, 0 (red)
-print( canivete.hex2rgb( "#00ff00" ) )
+print( canivete.hex2rgb( '#00ff00' ) )
 -- 0, 1, 0 (green)
-print( canivete.hex2rgb( "#0000ff" ) )
+print( canivete.hex2rgb( '#0000ff' ) )
 -- 0, 0, 1 (blue)
 ```
