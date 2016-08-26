@@ -96,7 +96,7 @@ Returns the interpolated number result between the two number values
 local lerp = canivete.lerp( 5, 10, 0.5 )
 print( 'lerp', lerp )
 -- output:
--- lerp 7.5
+--  lerp    7.5
 ```
 
 ### hex2rgb(string)
