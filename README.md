@@ -57,6 +57,19 @@ for i=1, #lannisters do print( lannisters[i].name, lannisters[i].score ) end
 --  Joanna  260
 ```
 
+### clone(orig)
+Returns a copy of the object original.
+```lua
+local parent = { 'Aerys II', 'Rhaella' }
+local targaryen = canivete.clone( parent )
+targaryen[#targaryen+1] = 'Rhaegar'
+targaryen[#targaryen+1] = 'Viserys III'
+targaryen[#targaryen+1] = 'Daenerys'
+print( #parent, #targaryen )
+-- output:
+--  2   5
+```
+
 ### sum(table)
 Returns the total sum of a table.
 ```lua
@@ -78,7 +91,7 @@ print( 'avg', avg )
 ```
 
 ### clamp(value, min, max)
-Clamps a value between a minimum number and maximum number value
+Clamps a value between a minimum number and maximum number value.
 ```lua
 local clamp = canivete.clamp( -20, -5, 10 )
 print( 'clamp', clamp )
@@ -92,7 +105,7 @@ print( 'clamp', clamp )
 ```
 
 ### lerp(start, end, interpolation)
-Returns the interpolated number result between the two number values
+Returns the interpolated number result between the two number values.
 ```lua
 local lerp = canivete.lerp( 5, 10, 0.5 )
 print( 'lerp', lerp )

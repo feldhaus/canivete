@@ -44,9 +44,9 @@ function _M.orderAsc( t, key )
     
     if key then
         assert( type( key ) == "string", "'orderAsc' (expects a string, got " .. type( key ) .. ")" )
-        table.sort( t, function(a,b) return a[key] < b[key] end )
+        table.sort( t, function( a,b ) return a[key] < b[key] end )
     else
-        table.sort( t, function(a,b) return a < b end )
+        table.sort( t, function( a,b ) return a < b end )
     end
 end
 
@@ -60,6 +60,19 @@ function _M.orderDesc( t, key )
     else
         table.sort( t, function(a,b) return a > b end )
     end
+end
+
+-- returns a copy of the object original
+function _M.clone( orig )
+    local copy = orig -- number, string, boolean, etc
+    if type( orig ) == 'table' then -- if table
+        copy = {}
+        for k, v in next, orig, nil do
+            copy[_M.clone( k )] = _M.clone( v )
+        end
+        setmetatable( copy, _M.clone( getmetatable( orig ) ) )
+    end
+    return copy
 end
 
 -- returns the sum table values
