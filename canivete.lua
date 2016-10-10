@@ -40,7 +40,6 @@ end
 
 -- returns a number between min and max values
 function _M.randomBetween( min, max )
-    -- bad argument #1 to 'function' (table expected, got string)
     assert( type( min ) == "number", "bad argument #1 to 'randomBetween' (number expected, got " .. type( min ) .. ")" )
     assert( type( max ) == "number", "bad argument #2 to 'randomBetween' (number expected, got " .. type( max ) .. ")" )
     assert( min < max, "bad argument #1 to 'randomBetween' (min is greater than max)" )
