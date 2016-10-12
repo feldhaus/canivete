@@ -21,7 +21,13 @@ canivete.shuffle( houses )
 for i=1, #houses do print( houses[i] ) end
 ```
 
-### orderAsc(table,[key])
+### randomBetween(min, max)
+Returns a value between min and max.
+```lua
+local randNumber = canivete.randomBetween( 5, 10 )
+```
+
+### orderAsc(table, [key])
 Sorts the table in ascending order.
 ```lua
 local starks = { 'Ned', 'Catelyn', 'Jon Snow', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon' }
@@ -38,7 +44,7 @@ for i=1, #starks do print( starks[i] ) end
 --  Sansa
 ```
 
-### orderDesc(table,[key])
+### orderDesc(table, [key])
 Sort the table in a descending order.
 ```lua
 local lannisters = { 
