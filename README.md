@@ -21,10 +21,42 @@ canivete.shuffle( houses )
 for i=1, #houses do print( houses[i] ) end
 ```
 
-### randomBetween(min, max)
-Returns a value between min and max.
+### range(start, stop, step)
+Returns a table containing arithmetic progression.
 ```lua
-local randNumber = canivete.randomBetween( 5, 10 )
+local range = canivete.range( 5, 10 )
+for i=1, #range do print( range[i] ) end
+-- output:
+--  5
+--  6
+--  7
+--  8
+--  9
+--  10
+
+local range = canivete.range( 1, 10, 2 )
+for i=1, #range do print( range[i] ) end
+-- output:
+--  1
+--  3
+--  5
+--  7
+--  9
+
+local range = canivete.range( 10, 0, -1 )
+for i=1, #range do print( range[i] ) end
+-- output:
+--  10
+--  9
+--  8
+--  7
+--  6
+--  5
+--  4
+--  3
+--  2
+--  1
+--  0
 ```
 
 ### orderAsc(table, [key])
