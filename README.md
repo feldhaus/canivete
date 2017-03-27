@@ -21,10 +21,36 @@ canivete.shuffle( houses )
 for i=1, #houses do print( houses[i] ) end
 ```
 
-### randomBetween(min, max)
-Returns a value between min and max.
+### range(start, end, [step])
+Returns a table containing arithmetic progression.
 ```lua
-local randNumber = canivete.randomBetween( 5, 10 )
+local numbers = canivete.range( 1, 5 )
+for i=1, #numbers do print( numbers[i] ) end
+-- output:
+--  1
+--  2
+--  3
+--  4
+--  5
+
+local numbers = canivete.range( 5, 1 )
+for i=1, #numbers do print( numbers[i] ) end
+-- output:
+--  5
+--  4
+--  3
+--  2
+--  1
+
+
+local numbers = canivete.range( 1, 10, 2 )
+for i=1, #numbers do print( numbers[i] ) end
+-- output:
+--  1
+--  3
+--  5
+--  7
+--  9
 ```
 
 ### orderAsc(table, [key])
@@ -117,6 +143,20 @@ local lerp = canivete.lerp( 5, 10, 0.5 )
 print( 'lerp', lerp )
 -- output:
 --  lerp    7.5
+```
+
+### loop(value, length)
+Loops the value, so that it is never larger than length and never smaller than 0.
+```lua
+local loop = canivete.loop( 5, 10 )
+print( 'loop', loop )
+-- output:
+--  loop    5
+
+local loop = canivete.loop( 15, 10 )
+print( 'loop', loop )
+-- output:
+--  loop    5
 ```
 
 ### hex2rgb(string)
