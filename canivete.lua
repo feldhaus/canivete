@@ -46,7 +46,7 @@ function _M.range( start, stop, step )
     if step then
         assert( type( step ) == "number", "bad argument #3 to 'range' (number expected, got " .. type( step ) .. ")" )
     else
-        step = 1
+        step = stop > start and 1 or -1
     end
     
     local t = {}
@@ -131,8 +131,8 @@ end
 
 -- loops the value, so that it is never larger than length and never smaller than 0
 function _M.loop( value, length )
-    assert( type( value ) == "number", "bad argument #1 to 'clamp' (number expected, got " .. type( value ) .. ")" )
-    assert( type( length ) == "number", "bad argument #2 to 'clamp' (number expected, got " .. type( length ) .. ")" )
+    assert( type( value ) == "number", "bad argument #1 to 'loop' (number expected, got " .. type( value ) .. ")" )
+    assert( type( length ) == "number", "bad argument #2 to 'loop' (number expected, got " .. type( length ) .. ")" )
     
     return value % length
 end
