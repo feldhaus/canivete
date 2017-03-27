@@ -38,13 +38,24 @@ function _M.shuffle( t )
     end
 end
 
--- returns a number between min and max values
-function _M.randomBetween( min, max )
-    assert( type( min ) == "number", "bad argument #1 to 'randomBetween' (number expected, got " .. type( min ) .. ")" )
-    assert( type( max ) == "number", "bad argument #2 to 'randomBetween' (number expected, got " .. type( max ) .. ")" )
-    assert( min < max, "bad argument #1 to 'randomBetween' (min is greater than max)" )
+-- returns a table containing arithmetic progression
+function _M.range( start, stop, step )
+    assert( type( start ) == "number", "bad argument #1 to 'range' (number expected, got " .. type( start ) .. ")" )
+    assert( type( stop ) == "number", "bad argument #2 to 'range' (number expected, got " .. type( stop ) .. ")" )
     
-    return min + math.random() * ( max - min )
+    if step then
+        assert( type( step ) == "number", "bad argument #3 to 'range' (number expected, got " .. type( step ) .. ")" )
+    else
+        step = 1
+    end
+    
+    local t = {}
+    
+    for i = start, stop, step do
+        t[#t+1] = i
+    end
+    
+    return t
 end
 
 -- sorts the table in ascending order
@@ -118,6 +129,14 @@ function _M.lerp( a, b, t )
     return a + ( b - a ) * t
 end
 
+-- loops the value, so that it is never larger than length and never smaller than 0
+function _M.loop( value, length )
+    assert( type( value ) == "number", "bad argument #1 to 'clamp' (number expected, got " .. type( value ) .. ")" )
+    assert( type( length ) == "number", "bad argument #2 to 'clamp' (number expected, got " .. type( length ) .. ")" )
+    
+    return value % length
+end
+    
 -- converts a hexadecimal string color to rgb (0-1)
 function _M.hex2rgb( hex )
     assert( type( hex ) == "string", "bad argument #1 to 'hex2rgb' (string expected, got " .. type( hex ) .. ")" )
